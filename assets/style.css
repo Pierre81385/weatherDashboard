@@ -1,0 +1,14 @@
+.container-fluid {
+  text-align: center;
+  height: 50px;
+  background-color: grey;
+  color: white;
+}
+
+.form-control {
+  margin: 5px;
+}
+
+label {
+  margin: 5px;
+}
