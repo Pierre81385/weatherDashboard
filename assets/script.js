@@ -207,3 +207,16 @@ function setDays(i) {
     $(this).text(t + " %");
   });
 }
+
+var c = moment().format("MM-DD-YYYY");
+var d1 = moment().add(1, "days").format("MM-DD-YYYY");
+var d2 = moment().add(2, "days").format("MM-DD-YYYY");
+var d3 = moment().add(3, "days").format("MM-DD-YYYY");
+var d4 = moment().add(4, "days").format("MM-DD-YYYY");
+var d5 = moment().add(5, "days").format("MM-DD-YYYY");
+$("#currentDay").text(c);
+$("#day1Li").text(d1);
+$("#day2Li").text(d2);
+$("#day3Li").text(d3);
+$("#day4Li").text(d4);
+$("#day5Li").text(d5);
