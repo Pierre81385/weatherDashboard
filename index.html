@@ -13,10 +13,15 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
-      <div class="container-fluid">Weather Dashboard</div>
+      <div class="container-fluid">🌦 Weather Dashboard ☀️</div>
     </header>
     <main>
       <div class="row">
@@ -41,14 +46,30 @@
         </div>
         <div class="col-10">
           <div class="row">
-            <div class="col-10">Current Weather</div>
+            <div class="col-10" id="currentWeatherDiv">
+              <ul>
+                <li id="currentCity"></li>
+                <li id="currentTemp"></li>
+                <li id="currentWind"></li>
+                <li id="currentHumidity"></li>
+                <li id="currentUV"></li>
+              </ul>
+            </div>
           </div>
           <div class="row">
-            <div class="col-2">Day 1</div>
-            <div class="col-2">Day 2</div>
-            <div class="col-2">Day 3</div>
-            <div class="col-2">Day 4</div>
-            <div class="col-2">Day 5</div>
+            <div class="col-2 card" id="day1">
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+            <div class="col-2 card" id="day2">Day 2</div>
+            <div class="col-2 card" id="day3">Day 3</div>
+            <div class="col-2 card" id="day4">Day 4</div>
+            <div class="col-2 card" id="day5">Day 5</div>
           </div>
         </div>
       </div>
