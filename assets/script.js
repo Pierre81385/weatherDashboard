@@ -206,6 +206,9 @@ function setDays(i) {
     var t = fiveDayHumidity[i];
     $(this).text(t + " %");
   });
+
+  $("#main").removeClass("invisible");
+  $("#main").addClass("visible");
 }
 
 var c = moment().format("MM-DD-YYYY");
