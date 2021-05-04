@@ -34,7 +34,7 @@ function search() {
     alert("You must enter a valid city name!");
   } else {
     console.log(buttonName);
-    button.className = "form-control histButton";
+    button.className = "form-control histButton btn-secondary";
     button.id = searchInput;
     button.appendChild(buttonName);
     searchHistory.appendChild(button);
@@ -48,7 +48,7 @@ function search() {
     var lonValue;
 
     fetch(
-      "http://api.openweathermap.org/geo/1.0/direct?q=" +
+      "https://api.openweathermap.org/geo/1.0/direct?q=" +
         searchInput +
         "&limit=1&appid=879fa5a3379aff15dec6456e147800b1"
     )
@@ -70,7 +70,7 @@ function search() {
             latValue +
             "&lon=" +
             lonValue +
-            "&exclude=alerts&appid=" +
+            "&units=imperial&exclude=alerts&appid=" +
             appID
         )
           .then(function (response) {
@@ -79,9 +79,11 @@ function search() {
           })
           .then(function (data) {
             console.log(data);
-            currentTemp.text("Temp: " + data["current"].temp);
-            currentWind.text("Wind: " + data["current"].wind_speed);
-            currentHumidity.text("Humidity: " + data["current"].humidity);
+            currentTemp.text("Temp: " + data["current"].temp + " °F");
+            currentWind.text("Wind: " + data["current"].wind_speed + " MPH");
+            currentHumidity.text(
+              "Humidity: " + data["current"].humidity + " %"
+            );
             currentUV.text("UV Index: " + data["current"].uvi);
           });
       });
@@ -101,7 +103,7 @@ function saveSearch() {
     var searchHistory = document.getElementById("searchHistoryButtons");
     var button = document.createElement("button");
     var buttonName = document.createTextNode(name[i]);
-    button.className = "form-control histButton";
+    button.className = "form-control histButton btn-secondary";
     button.id = name[i];
     button.appendChild(buttonName);
     searchHistory.appendChild(button);
