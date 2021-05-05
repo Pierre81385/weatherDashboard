@@ -46,6 +46,8 @@ historyDiv.on("click", function (event) {
 
 //function to create buttons based on search
 
+saveSearch();
+
 function search() {
   var searchInput = "";
   if (buttonPressed == true) {
@@ -58,7 +60,7 @@ function search() {
     fiveDayIcon.splice(0, fiveDayIcon.length);
   } else {
     searchInput = document.getElementById("searchInput").value;
-    idList.splice(0, idList.length);
+    // idList.splice(0, idList.length);
     fiveDayTemp.splice(0, fiveDayTemp.length);
     fiveDayWind.splice(0, fiveDayWind.length);
     fiveDayHumidity.splice(0, fiveDayHumidity.length);
@@ -173,22 +175,22 @@ function search() {
 
 //function to create buttons based on search history saved to local storage
 
-// function saveSearch() {
-//   var name = JSON.parse(localStorage.getItem("city"));
-//   console.log(name.length + "save buttons made");
-//   console.log(name + " saved");
+function saveSearch() {
+  var name = JSON.parse(localStorage.getItem("city"));
+  console.log(name.length + "save buttons made");
+  console.log(name + " saved");
 
-//   for (var i = 0; i < name.length; i++) {
-//     console.log(name[i]);
-//     var searchHistory = document.getElementById("searchHistoryButtons");
-//     var button = document.createElement("button");
-//     var buttonName = document.createTextNode(name[i]);
-//     button.className = "form-control histButton btn-secondary";
-//     button.id = name[i];
-//     button.appendChild(buttonName);
-//     searchHistory.appendChild(button);
-//   }
-// }
+  for (var i = 0; i < name.length; i++) {
+    console.log(name[i]);
+    var searchHistory = document.getElementById("searchHistoryButtons");
+    var button = document.createElement("button");
+    var buttonName = document.createTextNode(name[i]);
+    button.className = "form-control histButton btn-secondary";
+    button.id = name[i];
+    button.appendChild(buttonName);
+    searchHistory.appendChild(button);
+  }
+}
 
 //funtion to get weather information
 
