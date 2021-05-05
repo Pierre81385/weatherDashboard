@@ -173,22 +173,22 @@ function search() {
 
 //function to create buttons based on search history saved to local storage
 
-function saveSearch() {
-  var name = JSON.parse(localStorage.getItem("city"));
-  console.log(name.length + "save buttons made");
-  console.log(name + " saved");
+// function saveSearch() {
+//   var name = JSON.parse(localStorage.getItem("city"));
+//   console.log(name.length + "save buttons made");
+//   console.log(name + " saved");
 
-  for (var i = 0; i < name.length; i++) {
-    console.log(name[i]);
-    var searchHistory = document.getElementById("searchHistoryButtons");
-    var button = document.createElement("button");
-    var buttonName = document.createTextNode(name[i]);
-    button.className = "form-control histButton btn-secondary";
-    button.id = name[i];
-    button.appendChild(buttonName);
-    searchHistory.appendChild(button);
-  }
-}
+//   for (var i = 0; i < name.length; i++) {
+//     console.log(name[i]);
+//     var searchHistory = document.getElementById("searchHistoryButtons");
+//     var button = document.createElement("button");
+//     var buttonName = document.createTextNode(name[i]);
+//     button.className = "form-control histButton btn-secondary";
+//     button.id = name[i];
+//     button.appendChild(buttonName);
+//     searchHistory.appendChild(button);
+//   }
+// }
 
 //funtion to get weather information
 
