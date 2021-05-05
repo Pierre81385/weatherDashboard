@@ -124,7 +124,34 @@ function search() {
             currentHumidity.text(
               "Humidity: " + data["current"].humidity + " %"
             );
+            console.log("UVI is :" + data["current"].uvi);
             currentUV.text("UV Index: " + data["current"].uvi);
+
+            if (data["current"].uvi <= 2) {
+              currentUV.css({
+                "background-color": "green",
+                "animation-name": "low",
+                "animation-duration": "4s",
+              });
+            } else if (data["current"].uvi <= 5) {
+              currentUV.css({
+                "background-color": "yellow",
+                "animation-name": "moderate",
+                "animation-duration": "4s",
+              });
+            } else if (data["current"].uvi <= 7) {
+              currentUV.css({
+                "background-color": "orange",
+                "animation-name": "high",
+                "animation-duration": "4s",
+              });
+            } else {
+              currentUV.css({
+                "background-color": "red",
+                "animation-name": "veryHigh",
+                "animation-duration": "4s",
+              });
+            }
 
             console.log("generating 5 day");
             //five day

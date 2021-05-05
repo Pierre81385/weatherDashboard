@@ -49,3 +49,38 @@ ul {
 .element {
   @include invisible(hidden);
 }
+
+@keyframes low {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: green;
+  }
+}
+
+@keyframes moderate {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: yellow;
+  }
+}
+@keyframes high {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: orange;
+  }
+}
+
+@keyframes veryHigh {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: red;
+  }
+}
