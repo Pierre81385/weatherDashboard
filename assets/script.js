@@ -13,6 +13,19 @@ var currentWind = $("#currentWind");
 var currentHumidity = $("#currentHumidity");
 var currentUV = $("#currentUV");
 
+var c = moment().format("MM-DD-YYYY");
+var d1 = moment().add(1, "days").format("MM-DD-YYYY");
+var d2 = moment().add(2, "days").format("MM-DD-YYYY");
+var d3 = moment().add(3, "days").format("MM-DD-YYYY");
+var d4 = moment().add(4, "days").format("MM-DD-YYYY");
+var d5 = moment().add(5, "days").format("MM-DD-YYYY");
+$("#currentDay").text(c);
+$("#day1Li").text(d1);
+$("#day2Li").text(d2);
+$("#day3Li").text(d3);
+$("#day4Li").text(d4);
+$("#day5Li").text(d5);
+
 //add event listener for search button press
 
 // var searchButton = $("#searchButton");
@@ -121,6 +134,12 @@ function search() {
           })
           .then(function (data) {
             console.log(data);
+            var imgCode = data["current"].weather[0].icon;
+            console.log("Image code is: " + imgCode);
+            var iconURL =
+              "https://openweathermap.org/img/w/" + imgCode + ".png";
+            console.log("Icon URL: " + iconURL);
+            $("#currentWincon").attr("src", iconURL);
             currentTemp.text("Temp: " + data["current"].temp + " °F");
             currentWind.text("Wind: " + data["current"].wind_speed + " MPH");
             currentHumidity.text(
@@ -238,16 +257,3 @@ function setDays(i) {
   $("#main").removeClass("invisible");
   $("#main").addClass("visible");
 }
-
-var c = moment().format("MM-DD-YYYY");
-var d1 = moment().add(1, "days").format("MM-DD-YYYY");
-var d2 = moment().add(2, "days").format("MM-DD-YYYY");
-var d3 = moment().add(3, "days").format("MM-DD-YYYY");
-var d4 = moment().add(4, "days").format("MM-DD-YYYY");
-var d5 = moment().add(5, "days").format("MM-DD-YYYY");
-$("#currentDay").text(c);
-$("#day1Li").text(d1);
-$("#day2Li").text(d2);
-$("#day3Li").text(d3);
-$("#day4Li").text(d4);
-$("#day5Li").text(d5);
