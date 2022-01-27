@@ -1,6 +1,8 @@
 # weatherDashboard-HW6
 
-![screenshot](assets/weatherDashboard Screenshot.png)
+# Screenshot
+
+![Alt Text](assets/weatherDashboardScreenshot.png)
 
 A dashboard allowing users to search different cities and view the current and 5 day forecast for that city.
 
